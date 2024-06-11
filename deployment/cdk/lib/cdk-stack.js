@@ -28,7 +28,18 @@ class CdkStack extends cdk.Stack {
 
     const api = new apigateway.LambdaRestApi(this, 'UsersServiceApi', {
       restApiName: "UsersServiceApi",
-      handler: usersServiceLambda
+      handler: usersServiceLambda,
+      defaultCorsPreflightOptions: {
+        allowHeaders: [
+          'Content-Type',
+          'X-Amz-Date',
+          'Authorization',
+          'X-Api-Key',
+        ],
+        allowMethods: ['OPTIONS', 'GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
+        allowCredentials: true,
+        allowOrigins: ['*'],
+      }
     })
 
     usersTable.grantReadWriteData(usersServiceLambda);
