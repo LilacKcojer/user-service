@@ -15,7 +15,8 @@ class CdkStack extends cdk.Stack {
     const usersTable = new dynamodb.TableV2(this, 'UsersTable', {
       partitionKey: { name: 'email', type: dynamodb.AttributeType.STRING},
       removalPolicy: cdk.RemovalPolicy.DESTROY,
-      tableName: "UsersTable"
+      tableName: "UsersTable",
+      dynamoStream: dynamodb.StreamViewType.NEW_IMAGE
     });
 
     const usersServiceLambda = new NodejsFunction(this, 'UsersLambda', {
