@@ -8,6 +8,6 @@ exports.handler = async (event, context, callback) => {
 
     await snsClient.send( new PublishCommand({
         Message: email,
-        Topic: "arn:aws:sns:us-west-2:891377311743:newUsertopic"
+        TopicArn: "arn:aws:sns:us-west-2:891377311743:newUsertopic"
     }));
 }
