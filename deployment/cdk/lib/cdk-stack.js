@@ -67,6 +67,8 @@ class CdkStack extends cdk.Stack {
       displayName: "newUserTopic",
       topicName: "newUsertopic"
     });
+
+    newUserTopic.grantPublish(newUserSNSLambda);
   }
 }
 
