@@ -1,5 +1,5 @@
 import { PublishCommand }  from "@aws-sdk/client-sns";
-import {snsClient} from "../snsClient/snsClient.js";
+import {snsClient} from "../clients/snsClient.js";
 
 
 exports.handler = async (event, context, callback) => {
