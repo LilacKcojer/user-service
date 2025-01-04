@@ -35,7 +35,7 @@ const createSendEmailCommand = (toAddress, fromAddress) => {
     });
   };
 
-const EMAIL_ADDRESS = "AimLabGoals@aimstats.com";
+const EMAIL_ADDRESS = "jackcolllier@gmail.com";
 
 
 exports.handler = async (event) => {

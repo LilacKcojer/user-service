@@ -1,7 +1,7 @@
 import { VerifyEmailIdentityCommand } from "@aws-sdk/client-ses";
 import { sesClient } from "./libs/sesClient.js";
 
-const EMAIL_ADDRESS = "AimLabGoals@aimstats.com";
+const EMAIL_ADDRESS = "jackcolllier@gmail.com";
 
 const createVerifyEmailIdentityCommand = (emailAddress) => {
   return new VerifyEmailIdentityCommand({ EmailAddress: emailAddress });
